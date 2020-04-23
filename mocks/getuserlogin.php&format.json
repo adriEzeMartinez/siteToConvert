@@ -1,0 +1,14 @@
+{
+  "userinfo": {
+    "username": {
+      "-id": "001",
+      "#text": "adriMartinez"
+    },
+    "country": {
+      "-id": "001",
+      "#text": "Argentina"
+    },
+    "name": "Adrian",
+    "surname": "Martinez"
+  }
+}

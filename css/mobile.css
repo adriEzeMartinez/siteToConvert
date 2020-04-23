@@ -1,0 +1,110 @@
+@media (max-width: 1500px) {
+  .especie_single .especie_single__simulador .especie_single_simulador__table {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .especie_single .especie_single__simulador .especie_single_simulador__table .table_simulador {
+    width: 100%;
+  }
+  .especie_single .especie_single__simulador .especie_single_simulador__table .table_simulador .input-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #panel-page .panel_aside {
+    width: 200px;
+  }
+  #panel-page .panel_main .panel_box {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 1400px) {
+  #panel-page .panel_main table.custom-table {
+    font-size: 14px;
+  }
+  #panel-page .panel_main table.custom-table td, #panel-page .panel_main table.custom-table th {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .especies_box {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 992px) {
+  #panel-page .panel_aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: .5s transform;
+    transition: .5s transform;
+  }
+  #panel-page .panel_aside.active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  #panel-page .panel_aside .panel_aside__open {
+    position: absolute;
+    top: 0;
+    right: -50px;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 50px;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  #panel-page .panel_aside .panel_aside__open:before {
+    content: '';
+    background-image: url("../img/arrow-btn.svg");
+    background-size: 10px;
+    background-position: center;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+  }
+  #panel-page .panel_aside .panel_aside__open.active:before {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .table-responsive {
+    overflow-x: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .especie_single .especie_single__table {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .especie_single .especie_single__table .especie_indicadores, .especie_single .especie_single__table .especie_compra, .especie_single .especie_single__table .especie_venta {
+    width: 100%;
+  }
+  .especie_single .especie_single__simulador .especie_single_simulador__table .table_item {
+    width: 50%;
+    margin: 10px 0;
+  }
+  .especie_single .especie_single__simulador .especie_single_simulador__table .table_simulador {
+    margin-top: 25px;
+  }
+}
+/*# sourceMappingURL=mobile.css.map */

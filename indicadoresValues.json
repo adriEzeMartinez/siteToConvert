@@ -1,0 +1,62 @@
+{
+  "element": {
+    "item": [
+      {
+        "senal": {
+          "type": "C",
+          "pointy": "15",
+          "pointx": "10"
+        }
+      },
+      {
+        "senal": {
+          "type": "C",
+          "pointy": "12",
+          "pointx": "15"
+        }
+      },
+      {
+        "senal": {
+          "type": "V",
+          "pointy": "13",
+          "pointx": "20"
+        }
+      },
+      {
+        "senal": {
+          "type": "C",
+          "pointy": "12",
+          "pointx": "25"
+        }
+      },
+      {
+        "senal": {
+          "type": "V",
+          "pointy": "19",
+          "pointx": "38"
+        }
+      },
+      {
+        "senal": {
+          "type": "C",
+          "pointy": "10",
+          "pointx": "40"
+        }
+      },
+      {
+        "senal": {
+          "type": "V",
+          "pointy": "33",
+          "pointx": "47"
+        }
+      },
+      {
+        "senal": {
+          "type": "C",
+          "pointy": "10",
+          "pointx": "70"
+        }
+      }
+    ]
+  }
+}

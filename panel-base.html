@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/basictable.css">
+	<link rel="stylesheet" href="vendor/slick/slick.css">
+	<link href="https://fonts.googleapis.com/css?family=Rajdhani:500,600,700" rel="stylesheet">
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+	<script src="js/jquery.ui.touch-punch.min.js"></script>
+	<script src="js/jquery.basictable.min.js"></script>
+	<script src="vendor/slick/slick.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/panel.js"></script>
+	<title>TraderBlaze | Home</title>
+</head>
+<body class="panel-hidder">
+	<main id="panel-page">
+		<div class="panel_aside__open"></div>
+		<div class="panel_aside__over"></div>
+		<aside class="panel_aside">
+			<div class="panel_aside__brand">
+				<h2>TraderBlaze</h2>
+			</div>
+			<ul class="panel_aside__menu">
+				<li class="name"><a href="#" class="active">Bienvenido <b><script>document.write(localStorage.getItem("username").toUpperCase());</script></b></a></li>
+			    <li><a href="#" id="PanelCoinDashboard">Coin Dashboard</a></li>
+				<li><a href="#" id="PanelPortfolio">Portfolio</a></li>
+				<li><a href="#" id="PanelRobot">Old</a></li>
+			</ul>
+			<!--
+			<h6 class="panel_aside__separator">Alerts</h6>
+			<ul class="panel_aside__menu">
+				<li><a href="#" id="PanelNotificaciones">Notificaciones <span class="badge badge-danger">3</span></a></li>
+				<li><a href="#">Alertas</a></li>
+			</ul>
+			!-->
+			<h6 class="panel_aside__separator">Mi cuenta</h6>
+			<ul class="panel_aside__menu">
+				<li><a href="#" id="AjustesLink">Ajustes</a></li>
+				<li><a href="#">Ayuda</a></li>
+				<li><a href="#" id="EndSession">Cerrar sesión</a></li>
+			</ul>
+		</aside>
+		<!-- Panel Ajustes -->
+		<div class="panel_main panel_main__pass hidden" id="AjustesSection">
+			<h1 class="panel_main__title">
+				Ajustes
+			</h1>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-8 col-lg-12">
+						<div class="panel_box">
+							<h4 class="panel_box__title">
+								Cambiar Contraseña
+							</h4>
+							<hr />
+							<form id="FormCambiarPass">
+								<div id="MsgResult"></div>
+								<div class="input-password">
+									<div class="btn-show_password js-show-password"></div>
+									<input type="password" class="custom-input" placeholder="Contraseña Actual" name="oldPass" />
+								</div>
+								<div class="input-password">
+									<div class="btn-show_password js-show-password"></div>
+									<input type="password" class="custom-input" placeholder="Nueva Contraseña" name="newPass" />
+								</div>
+								<div class="btn-container">
+									<button type="submit" class="custom-button--border">Cambiar</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-12"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Panel general -->
+		<div class="panel_main" id="MiPanelSection">
+			<h1 class="panel_main__title">
+				Mi Panel
+			</h1>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-9 col-lg-12 col-md-12">
+						<div class="collapse" id="especie_collapse">
+							<div class="especie_single">
+								<div class="panel_box">
+									<div class="panel_box__close"></div>
+									<h4 class="especie_single__title">
+										BCBA:BYMA
+									</h4>
+									<div id="AlertEspecies"></div>
+									<div class="especie_single__table">
+										<div class="especie_indicadores">
+											<h5>Indicadores</h5>
+											<div class="especie_indicadores_container droppable"></div>
+										</div>
+										<div class="especie_compra">
+											<h5>Compra</h5>
+											<div class="especie_compra_drop droppable">
+
+											</div>
+										</div>
+										<div class="especie_venta">
+											<h5>Venta</h5>
+											<div class="especie_venta_drop droppable">
+
+											</div>
+										</div>
+									</div>
+									<div class="especie_single__simulador">
+										<form id="SimuladorForm">
+											<input type="hidden" name="TickerId" value="" />
+											<div class="especie_single_simulador__table">
+												<div class="table_item table_simulador">
+													<!--
+													<div class="input-container">
+														<button class="custom-button" id="SimularButton">SIMULAR</button>
+													</div>
+													!-->
+												</div>
+											</div>
+											<div class="especie_single_simulador__container">
+												<canvas id="canvas" height="80"></canvas>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="panel_box" id="HomeTableData">
+							<!-- <div class="table-responsive" id="HomeTableData"> -->
+								<table class="custom-table table-lg" id="main-table" border="0" cellspacing="0" cellpadding="0"></table>
+								<div class="table-sm">
+									<div class="table-sm--nav">
+										<div class="nav-left disabled"><img src="img/nav-arrow-2.svg" alt=""></div>
+										<div class="dots"></div>
+										<div class="nav-right"><img src="img/nav-arrow-2.svg" alt=""></div>
+									</div>
+									<div class="tickers-data">
+										
+									</div>
+									<div class="tickers">
+										
+									</div>
+								</div>
+							<!-- </div> -->
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-12">
+						<div class="panel_box especies_box">
+							<h4 class="panel_box__title">Especies</h4>
+							<input class="custom-input" type="text" placeholder="Buscar">
+							<div class="especies_box__title" data-toggle="collapse" data-target="#merval" aria-expanded="false" aria-controls="merval">
+								<span class="flag flag-arg"></span><span>SHA256d</span>
+							</div>
+							<div class="especies_box__collapse">
+								<div class="collapse" id="merval">
+									<div class="especies-container" id="TypeMerval"></div>
+								</div>
+							</div>
+							<div class="especies_box__title" data-toggle="collapse" data-target="#bitfinex" aria-expanded="false" aria-controls="bitfinex">
+								<span class="flag bit"></span><span>EtHash</span>
+							</div>
+							<div class="especies_box__collapse">
+								<div class="collapse" id="bitfinex">
+									<div class="especies-container" id="TypeBatFinex"></div>
+								</div>
+							</div>
+							<div class="especies_box__title" data-toggle="collapse" data-target="#nasdaq" aria-expanded="false" aria-controls="nasdaq">
+								<span class="flag flag-usa"></span><span>Scrypt</span>
+							</div>
+							<div class="especies_box__collapse">
+								<div class="collapse" id="nasdaq">
+									<div class="especies-container" id="TypeNasdaq"></div>
+								</div>
+							</div>
+							<div class="especies_box__title" data-toggle="collapse" data-target="#dowjones" aria-expanded="false" aria-controls="dowjones">
+								<span class="flag flag-usa"></span><span>ECDSA</span>
+							</div>
+							<div class="especies_box__collapse">
+								<div class="collapse" id="dowjones">
+									<div class="especies-container" id="TypeDowJones"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+	<div class="modal fade" id="NotifModal">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Notificaciones</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="tablemodalnotif table-xs" border="0" cellspacing="0" cellpadding="0">
+						<tbody></tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="custom-button--border" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

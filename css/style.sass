@@ -1,0 +1,1262 @@
+$f-exo: 'Exo 2', sans-serif
+$f-raj: 'Rajdhani', sans-serif
+$c-blue: #0FACF3
+$c-grey: #a3a6b1
+$c-red: #ff3434
+$c-green: #28d48e
+=placeholder
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+input::-ms-clear, input::-ms-reveal
+	display: none
+.input-password
+	// margin-bottom: 20px
+	position: relative
+	input
+		margin-bottom: 0
+		padding-right: 50px !important
+	.btn-show_password
+		// background-color: peru
+		width: 49px
+		height: 48px
+		position: absolute
+		top: 1px
+		right: 1px
+		cursor: pointer
+		background-color: white
+		&:before
+			transition: .25s background-position, .25s opacity
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			background-position: 50% 50%
+			background:
+				repeat: no-repeat
+				size: 24px
+				image: url('../img/eye.svg')
+
+		&.showing-password
+			&:after
+				opacity: 1
+				background-position: 50% 50%
+			&:before
+				opacity: 0
+				background-position: 50% 90%
+		&:after
+			transition: .25s background-position, .25s opacity
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			opacity: 0
+			background-position: 50% 90%
+			background:
+				repeat: no-repeat
+				size: 24px
+				image: url('../img/eye-outline.svg')
+
+body
+	font-family: $f-raj
+
+
+#login-page
+	background-color: #0FACF3
+	background-image: url('../img/pa.png')
+	width: 100vw
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	text-align: center
+	.login_brand
+		color: white
+		font-weight: 900
+		margin: 0 0 25px 0
+		font-size: 35px
+		font-family: $f-raj
+	.login_box
+		background-color: white
+		max-width: 450px
+		width: 100%
+		border-radius: 3px
+		box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1)
+		.login_box__header
+			padding: 35px 0 0 0
+			h3
+				margin: 0
+				font-size: 25px
+				text-align: center
+				color: #094a69
+				font-family: $f-raj
+				font-weight: 800
+				color: #0093da
+				text-transform: uppercase
+		.login_box__main
+			padding: 25px 45px 45px 45px
+		.input-password
+			margin: 0
+	@media(max-width: 576px)
+		.login_box
+			max-width: 90%
+			.login_box__main
+				padding: 25px
+			.login_box__header
+				padding: 25px 0 0 0
+				h3
+					font-size: 20px
+
+input.custom-input
+	width: 100%
+	min-height: 50px
+	margin-bottom: 20px
+	border: 1px solid #ddd
+	border-radius: 3px
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1)
+	padding: 0 15px
+	outline: none
+	transition: .2s border-color, .2s box-shadow
+	+placeholder
+		color: grey
+	&:active, &:focus
+		border-color: $c-blue
+		box-shadow: 0px 1px 3px rgba(0, 176, 255, 0.57)
+
+.custom-button--border
+	border: 0
+	width: 100%
+	min-height: 55px
+	text-transform: uppercase
+	color: white
+	font-weight: 800
+	border-radius: 3px
+	cursor: pointer
+	text-decoration: none
+	background-color: transparent
+	width: 100%
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	text-align: center
+	margin-bottom: 7px
+	color: #717180
+	border: 2px solid #dddddd
+	transition: .2s color, .2s border-color
+	margin-top: 10px
+	&:hover
+		text-decoration: none
+		color: $c-blue
+		border-color: $c-blue
+
+button.custom-button
+	border: 0
+	width: 100%
+	min-height: 55px
+	background-color: $c-blue
+	text-transform: uppercase
+	color: white
+	font-weight: 800
+	border-radius: 3px
+	cursor: pointer
+
+button.custom-button-mini
+	border: 0
+	width: 110px
+	min-height: 35px
+	background-color: $c-blue
+	text-transform: uppercase
+	color: white
+	font-weight: 800
+	border-radius: 3px
+	cursor: pointer
+
+.panel-hidder
+	display: none
+
+#panel-page
+	display: flex
+	.panel_aside
+		width: 250px
+		min-height: 100vh
+		flex-shrink: 0
+		background-color: #fafafa
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			width: 10px
+			top: 0
+			bottom: 0
+			right: 0
+			background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.03) 100%)
+			pointer-events: none
+		.panel_aside__brand
+			h2
+				margin: 0
+				font-weight: 800
+				font-size: 25px
+				text-align: center
+				padding: 28px
+				background: $c-blue
+				color: white
+				background-image: url('../img/pa.png')
+
+		.panel_aside__separator
+			padding: 0 20px
+			background: #eff0f3
+			min-height: 35px
+			display: flex
+			align-items: center
+			font-weight: 900
+			color: #333
+			margin: 0
+		.panel_aside__menu
+			margin: 0
+			padding: 0
+			li
+				list-style: none
+				&.name a
+					padding: 5px !important
+					justify-content: center
+					white-space: pre
+			a
+				width: 100%
+				min-height: 45px
+				display: inline-flex
+				align-items: center
+				padding-left: 35px
+				text-decoration: none
+				font-weight: 600
+				transition: .2s background-color, .2s color
+				color: #848484
+				position: relative
+				&:hover, &:active, &.active
+					background-color: $c-blue
+					color: white
+
+			.badge
+				margin-left: 10px
+
+	.panel_main
+		background-color: white
+		min-height: 100vh
+		width: 100%
+		padding: 40px
+		.panel_main__title
+			border-bottom: 1px solid #f1f1f1
+			padding-bottom: 15px
+			font-weight: 900
+			font-size: 27px
+			margin-bottom: 30px
+		.panel_box
+			padding: 35px
+			border: 1px solid #f1f1f1
+			border-radius: 3px
+			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1)
+			position: relative
+			.panel_box__title
+				font-weight: 800
+				color: #0093da
+				line-height: 1
+				margin-bottom: 15px
+				// font-weight: 900
+				// font-size: 18px
+				// color: #0facf3
+			.panel_box__close
+				background-image: url('../img/icn-close.svg')
+				cursor: pointer
+				width: 18px
+				height: 18px
+				position: absolute
+				background-size: 100%
+				top: 36px
+				right: 36px
+			@media(max-width: 1500px)
+				.panel_box__close
+					top: 19px
+
+
+
+			table
+				width: 100%
+		.table-responsive
+			overflow-x: inherit 
+			// position: relative
+			@media(max-width: 992px)
+				overflow-x: auto
+		.table-sm
+			display: none
+			.blue
+				color: $c-blue
+				font-weight: 600
+			.red
+				color: $c-red
+				font-weight: 600
+			.green
+				color: $c-green
+				font-weight: 600
+
+			@media(max-width: 800px)
+				display: flex
+				position: relative
+				padding-top: 40px
+				.table-sm--nav
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					height: 40px
+					display: flex
+					align-items: center
+					justify-content: center
+					.slick-dots
+						margin: 0
+						padding: 0
+						font-size: 0
+						li
+							margin: 0 6px
+							padding: 0
+							list-style: none
+							display: inline-block
+							button
+								width: 10px
+								height: 10px
+								border-radius: 10px
+								background: black
+								border: 0
+								font-size: 0
+								padding: 0
+								cursor: pointer
+								opacity: .2
+								transition: .2s opacity
+								outline: none
+								&[aria-selected="true"]
+									opacity: 1
+
+
+					.nav-left, .nav-right
+						width: 50px
+						height: 40px
+						display: inline-flex
+						align-items: center
+						justify-content: center
+						cursor: pointer
+						opacity: .5
+						img
+							width: 15px
+							user-select: none
+						&.disabled
+							pointer-events: none
+							opacity: .2
+					.nav-left
+						img
+							transform: rotate(-180deg)
+
+
+				.tickers-data
+					width: 100px
+					ul
+						margin: 0
+						padding: 0
+					li
+						margin: 0
+						list-style: none
+						background-color: #fafafa
+						font-weight: 800
+						padding: 0 10px
+						height: 50px
+						display: flex
+						align-items: center
+						border-right: 1px solid #d7d7e0
+						border-top: 1px solid #d7d7e0
+						border-left: 1px solid #d7d7e0
+						&:last-child
+							border-bottom: 1px solid #d7d7e0
+				.tickers
+					// height: 350px
+					width: calc(100% - 100px)
+					// width: 100%
+					ul
+						margin: 0
+						padding: 0
+						width: 100%
+					li
+						margin: 0
+						list-style: none
+						width: 100%
+						height: 50px
+						border-top: 1px solid #d7d7e0
+						border-right: 1px solid #d7d7e0
+						padding-left: 10px
+						font-weight: 600
+						display: flex
+						align-items: center
+						.icon.icon-bullet
+							margin-right: 5px
+						.flag
+							margin-right: 5px
+						&:last-child
+							border-bottom: 1px solid #d7d7e0
+							display: flex
+							padding: 0
+							.col-icon
+								width: 50%
+								height: 50px
+								cursor: pointer
+								&.col-ajustes
+									border-right: 1px solid #d7d7e0
+
+								.btn-ajustes, .btn-borrar
+									font-size: 0
+									width: 100%
+									height: 50px
+									display: flex
+									align-items: center
+									justify-content: center
+								&:hover
+									&.col-ajustes
+										background-color: $c-blue
+										.icon-gear
+											background-image: url('../img/icn-gear-white.svg')
+									&.col-borrar
+										background-color: $c-red
+										.icon-trash
+											background-image: url('../img/icn-trash-white.svg')
+
+
+
+		table.custom-table
+			border-collapse: separate
+			// min-width: 650px
+			white-space: nowrap
+			font-weight: 600
+			td, th
+				border: 0.5px solid #f1f1f1
+				padding: 15px
+				.blue
+					color: $c-blue
+					font-weight: 600
+				.red
+					color: $c-red
+					font-weight: 600
+				.green
+					color: $c-green
+					font-weight: 600
+			.table-header
+				background-color: #f1f1f1
+			tr
+				background-color: white
+				transition: .1s transform, .1s background-color, .1s color
+				&:hover
+					transform: scale(1.02)
+					position: relative
+					z-index: 10
+					color: white
+					.blue, .red, .green
+						color: white
+					.icon-bullet
+						background-color: white
+					td
+						background-color: $c-blue
+						border-color: #0093da
+					th
+						background-color: #057aaf
+						border-color: #057aaf
+					.btn-ajustes
+						.icon-gear
+							background-image: url('../img/icn-gear-white.svg')
+					.btn-borrar
+						.icon-trash
+							background-image: url('../img/icn-trash-white.svg')
+			.flag
+				vertical-align: -3px
+			@media(max-width: 800px)
+				display: none
+
+			
+
+
+
+			// 1ST
+			// @media(max-width: 800px)
+			// 	width: 100%
+			// 	min-width: auto
+			// 	font-size: 16px !important
+			// 	font-weight: 600
+			// 	tr
+			// 		display: flex
+			// 		margin-bottom: 20px
+			// 		flex-wrap: wrap
+			// 		border: 1px solid #f1f1f1
+			// 		transition: none !important
+			// 		&:last-child
+			// 			margin-bottom: 0
+			// 		td
+			// 			width: 100%
+			// 			.icon-bullet
+			// 				margin-top: 7px
+			// 				margin-right: 5px
+			// 			&[data-th="ESPECIE"]
+			// 				font-weight: 900
+			// 				span
+			// 					margin-right: 5px
+			// 					margin-top: 3px
+			// 			&:before
+			// 				background-color: #0093da
+			// 				margin: -11px 10px -11px -10px
+			// 				display: inline-flex
+			// 				align-items: center
+			// 				padding-left: 10px
+			// 				color: white
+			// 			&.col-icon
+			// 				width: 50%
+			// 				&:before
+			// 					content: none
+			// 			.btn-ajustes
+			// 				&:hover
+			// 					background-color: #0093da
+			// 					.icon-gear
+			// 						background-image: url('../img/icn-gear-white.svg')
+			// 			.btn-borrar
+			// 				&:hover
+			// 					background-color: $c-red
+			// 					.icon-trash
+			// 						background-image: url('../img/icn-trash-white.svg')
+			// 		&:hover
+			// 			transform: none
+			// 			transition: none !important
+			// 			tr, td
+			// 				background-color: white !important
+			// 				border-color: #f1f1f1
+			// 				color: #212529
+			// 				transition: none !important
+			// 			.btn-ajustes
+			// 				.icon-gear
+			// 					background-image: url('../img/icn-gear.svg')
+			// 			.btn-borrar
+			// 				.icon-trash
+			// 					background-image: url('../img/icn-trash.svg')
+			// 			.blue
+			// 				color: $c-blue
+			// 			.red
+			// 				color: $c-red
+			// 			.green
+			// 				color: $c-green
+			// 			.icon
+			// 				&.icon-bullet
+			// 					background-color: $c-blue
+			// 					&.icon-bullet--red
+			// 						background-color: $c-red
+			// 					&.icon-bullet--green
+			// 						background-color: $c-green
+
+
+
+			// 2ND
+			// @media(max-width: 1320px) and (min-width: 1200px)
+			// 	font-size: 14px
+			// 	td
+			// 		padding: 5px !important
+			// @media(max-width: 992px)
+			// 	// padding-left: 100px
+			// 	transition: none
+			// 	th
+			// 		&:first-child
+			// 			// width: 100px
+			// 			min-width: 80px
+			// 			position: absolute
+			// 			background: #f1f1f1
+			// 			left: 15px
+			// 			background-color: #057aaf
+			// 			color: white
+			// 			border-color: #008dd2
+			// 			box-shadow: 3px 0px 10px -4px rgba(0, 0, 0, 0.4)
+			// 	td
+			// 		&:first-child
+			// 			position: absolute
+			// 			height: 55px
+			// 			// width: 100px
+			// 			min-width: 80px
+			// 			background-color: white
+			// 			display: flex
+			// 			align-items: center
+			// 			// justify-content: center
+			// 			left: 15px
+			// 			background-color: #0093da
+			// 			color: white
+			// 			border-color: #008dd2
+			// 			box-shadow: 3px 0px 10px -4px rgba(0, 0, 0, 0.4)
+			// 			.flag
+			// 				margin-right: 5px
+			// 	tr
+			// 		transition: none
+			// 		&:hover
+			// 			transform: none
+			// 			transition: none !important
+			// 			td
+			// 				background-color: white !important
+			// 				border-color: #f1f1f1
+			// 				color: #212529
+			// 				transition: none !important
+			// 				&:first-child
+			// 					background-color: #0093da !important
+			// 					color: white !important
+			// 					border-color: #008dd2 !important
+			// 					box-shadow: 3px 0px 10px -4px rgba(0, 0, 0, 0.4) !important
+
+			// 			.btn-ajustes
+			// 				.icon-gear
+			// 					background-image: url('../img/icn-gear.svg')
+			// 				&:hover
+			// 					.icon-gear
+			// 						background-image: url('../img/icn-gear-white.svg')
+			// 			.btn-borrar
+			// 				.icon-trash
+			// 					background-image: url('../img/icn-trash.svg')
+			// 				&:hover
+			// 					.icon-trash
+			// 						background-image: url('../img/icn-trash-white.svg')
+			// 			.blue
+			// 				color: $c-blue
+			// 			.red
+			// 				color: $c-red
+			// 			.green
+			// 				color: $c-green
+			// 			.icon
+			// 				&.icon-bullet
+			// 					background-color: $c-blue
+			// 					&.icon-bullet--red
+			// 						background-color: $c-red
+			// 					&.icon-bullet--green
+			// 						background-color: $c-green
+
+				// th, td
+					// &:nth-child(2)
+						// margin-left: 100px
+
+
+			.btn-ajustes
+				display: flex
+				align-items: center
+				justify-content: center
+				width: calc(100% - 0px)
+				min-height: 54px
+				cursor: pointer
+				&:hover
+					background-color: #0093da
+					.icon-gear
+						background-image: url('../img/icn-gear-white.svg')
+			.btn-borrar
+				display: flex
+				align-items: center
+				justify-content: center
+				width: calc(100% - 0px)
+				min-height: 54px
+				cursor: pointer
+				&:hover
+					background-color: $c-red
+					.icon-trash
+						background-image: url('../img/icn-trash-white.svg')
+			.col-ajustes, .col-borrar, .col-icon
+				padding: 0
+				min-width: 40px
+			.col-borrar:hover
+				border-color: $c-red
+		.especies_box
+			.especies_box__title
+				padding: 10px
+				display: inline-flex
+				align-items: center
+				cursor: pointer
+				width: 100%
+				border-radius: 3px
+				margin-bottom: 5px
+				background-color: #fafafa
+				position: relative
+				.flag
+					margin-right: 5px
+				&:before
+					content: ''
+					width: 10px
+					height: 10px
+					background-image: url('../img/arrow-btn.svg')
+					background-size: 10px 10px
+					position: absolute
+					transform: rotate(90deg)
+					right: 20px
+					transition: .2s transform
+				&.active, &[aria-expanded="true"]
+					&:before
+						transform: rotate(-90deg)
+			.especies-container
+				display: flex
+				flex-wrap: wrap
+				justify-content: center
+				span
+					cursor: pointer
+					background: #06628c
+					display: inline-block
+					color: white
+					border-radius: 3px
+					text-align: center
+					padding: 0 5px
+					margin: 2px
+					min-width: 19%
+
+	@media (max-width: 1500px)
+		.panel_aside
+			width: 200px
+		.panel_main
+			.panel_box
+				padding: 15px
+
+
+	@media (max-width: 1400px)
+		.panel_main
+			table.custom-table
+				// font-size: 14px
+				td, th
+					padding: 10px
+
+	@media (max-width: 1200px)
+		.panel_main
+			.especies_box
+				margin-top: 35px
+
+	@media (max-width: 992px)
+		.panel_main
+			padding: 70px 40px 40px 40px
+		.panel_aside
+			position: fixed
+			left: 0
+			top: 0
+			bottom: 0
+			z-index: 50
+			transform: translateX(-100%)
+			transition: .5s transform
+			will-change: transform
+			overflow-y: auto
+			&.active
+				transform: translateX(0)
+		.panel_aside__over
+			position: fixed
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(0, 0, 0, 0.3)
+			z-index: 30
+			pointer-events: none
+			opacity: 0
+			transition: .5s opacity
+			will-change: opacity
+			&.active
+				opacity: 1
+				pointer-events: auto
+		.panel_aside__open
+			cursor: pointer
+			z-index: 60
+			position: fixed
+			top: 0
+			// right: -50px
+			left: 0
+			background-color: rgba(0, 0, 0, 0.05)
+			width: 50px
+			height: 50px
+			display: flex
+			justify-content: center
+			align-items: center
+			background-repeat: no-repeat
+			cursor: pointer
+			transition: .5s left
+			will-change: left
+			&:before
+				content: ''
+				background-image: url('../img/arrow-btn.svg')
+				background-size: 10px
+				background-position: center
+				width: 10px
+				height: 10px
+				display: inline-block
+				transition: transform .5s
+			&.active
+				left: 200px
+				&:before
+					transform: rotate(180deg)
+	@media (max-width: 768px)
+		.panel_main
+			padding: 60px 20px 20px 20px
+
+
+
+.flag
+	width: 16px
+	height: 16px
+	display: inline-block
+	background-size: 16px 16px
+	&.flag-usa
+		background-image: url('../img/flag-usa.svg')
+	&.flag-arg
+		background-image: url('../img/flag-argentina.svg')
+	&.bit
+		background-image: url('../img/bitfinex.svg')
+.icon
+	display: inline-block
+	width: 16px
+	background-size: 16px 16px
+	height: 16px
+	&.icon-up
+		background-image: url('../img/icn-up.svg')
+	&.icon-down
+		background-image: url('../img/icn-bottom.svg')
+	&.icon-bullet
+		background-color: $c-blue
+		border-radius: 8px
+		width: 8px
+		height: 8px
+		vertical-align: 1px
+		&.icon-bullet--red
+			background-color: $c-red
+		&.icon-bullet--green
+			background-color: $c-green
+	&.icon-gear
+		background-image: url('../img/icn-gear.svg')
+	&.icon-trash
+		background-image: url('../img/icn-trash.svg')
+
+
+.especie_single
+	margin-bottom: 30px
+	.especie_single__title
+		font-weight: 800
+		color: #0093da
+		line-height: 1
+		margin-bottom: 15px
+	.especie_single__table
+		display: flex
+		width: 100%
+		justify-content: space-between
+		transition: .2s height
+		will-change: height
+		.especie_indicadores, .especie_compra, .especie_venta
+			width: calc(33.33% - 10px)
+			transition: .2s height
+			will-change: height
+			.item_label
+				display: inline-block
+				background: #ececec
+				border-radius: 3px
+				font-weight: 600
+				margin-bottom: 5px
+				color: #212529
+				transition: .2s box-shadow
+				span
+					display: inline-block
+					padding: 5px 10px
+					&:hover
+						cursor: pointer
+				input
+					border: 1px solid #ececec
+					border-radius: 0 3px 3px 0
+					box-shadow: 0px 1px 3px rgba(0, 0, 0, 0)
+					outline: none
+					transition: .2s border-color, .2s box-shadow
+					color: grey
+					font-size: 13px
+					width: 35px
+					height: 34px
+					+placeholder
+						color: grey
+					&:active, &:focus
+						border-color: $c-blue
+						box-shadow: 0px 1px 3px rgba(0, 176, 255, 0.57)
+				&.ui-draggable-dragging
+					box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15), inset 0 0 0 1px #bfbfc7
+					z-index: 50
+					input
+						border-color: #bfbfc7
+					span:hover
+						cursor: move
+
+			.especie_compra_drop, .especie_venta_drop, .especie_indicadores_container
+				width: 100%
+				border: 1px solid #f1f1f1
+				padding: 25px
+				border-radius: 0 0 5px 5px
+				min-height: calc(100% - 50px)
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				transition: .2s height
+				will-change: height
+			h5
+				width: 100%
+				background-color: #f1f1f1
+				padding: 15px
+				margin: 0
+				font-weight: 900
+				color: #333
+				text-transform: uppercase
+				border-radius: 3px 3px 0 0
+				font-size: 16px
+			.especie_compra_drop, .especie_venta_drop, .especie_indicadores_container
+				background-color: white !important
+				position: relative
+				&:before
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					background-image: url('../img/barber-2.gif')
+					opacity: 0
+					transition: opacity .2s
+					will-change: opacity
+					z-index: 0
+				&.ui-droppable-active
+					&:before
+						opacity: .25
+					&.ui-state-hover
+						&:before
+							opacity: .7
+				&.ui-state-highlight
+					background-color: white
+					color: #333
+
+	.especie_single__simulador
+		h5
+			width: 100%
+			background-color: #f1f1f1
+			padding: 15px
+			margin: 15px 0 0 0
+			font-weight: 900
+			color: #333
+			text-transform: uppercase
+			border-radius: 3px 3px 0 0
+			font-size: 16px
+		.especie_single_simulador__container
+			width: 100%
+			border-left: 1px solid #f1f1f1
+			border-right: 1px solid #f1f1f1
+			border-bottom: 1px solid #f1f1f1
+			padding: 25px
+			border-radius: 0 0 5px 5px
+			min-height: calc(100% - 50px)
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+		.especie_single_simulador__table
+			padding: 20px 20px 0 20px
+			border-right: 1px solid #f1f1f1
+			border-left: 1px solid #f1f1f1
+			display: flex
+			justify-content: flex-start
+			width: 100%
+			flex-wrap: wrap
+			.table_item
+				width: calc(25% - 15px)
+				margin-bottom: 15px
+				margin-right: 15px
+				h6
+					font-size: 14px
+					color: grey
+					margin: 0
+				span
+					font-weight: 700
+			.table_simulador
+				margin: 0
+				width: 100%
+				.input-container
+					justify-content: flex-end
+			.input-container
+				display: flex
+				align-items: center
+				input
+					margin: 0
+					height: 35px
+					min-height: 35px
+					padding: 0 5px
+					min-width: 80px
+					border-radius: 0
+					width: 100%
+				label
+					height: 35px
+					min-height: 35px
+					margin: 0
+					display: flex
+					align-items: center
+					background: #f1f1f1
+					padding: 0 10px
+					border-radius: 3px 0 0 3px
+					border-top: 1px solid #dddddd
+					border-left: 1px solid #dddddd
+					border-bottom: 1px solid #dddddd
+					font-size: 14px
+					color: #6d6d6d
+					font-weight: 600
+				button
+					height: 35px
+					min-height: 35px
+					width: auto
+					border-radius: 3px
+					font-size: 14px
+					font-weight: 600
+					letter-spacing: 0.02em
+					padding: 0 10px
+				&.input-container--first
+					position: relative
+					.input-first
+						margin: 1px
+						height: 33px
+						display: inline-flex
+						position: absolute
+						width: 25px
+						background-color: #f1f1f1
+						align-items: center
+						justify-content: center
+						border-right: 1px solid #ddd
+						top: 0
+						left: 0
+						color: #66757b
+						font-size: 17px
+					.custom-input
+						padding-left: 30px
+				&.input-container--last
+					position: relative
+					.input-last
+						margin: 1px
+						height: 33px
+						background: red
+						display: inline-flex
+						position: absolute
+						width: 25px
+						background-color: #f1f1f1
+						align-items: center
+						justify-content: center
+						border-left: 1px solid #ddd
+						top: 0
+						right: 0
+						color: #66757b
+						font-size: 17px
+					.custom-input
+						padding-right: 30px
+
+
+	@media (max-width: 768px)
+		.especie_single__table
+			flex-wrap: wrap
+			.especie_indicadores, .especie_compra, .especie_venta
+				// width: 100%
+				.especie_indicadores_container, .especie_compra_drop, .especie_venta_drop
+					padding: 15px
+				.item_label
+					display: flex
+
+		.especie_single__simulador
+			.especie_single_simulador__table
+				justify-content: space-between
+				.table_item
+					width: calc(50% - 10px)
+					margin: 10px 0
+				.table_simulador
+					width: 100%
+
+
+	@media (max-width: 576px)
+		.especie_single__simulador
+			.especie_single_simulador__container
+				padding: 0
+			.especie_single_simulador__table
+				padding: 10px
+				text-align: center
+				.table_simulador
+					.input-container
+						justify-content: center
+		.especie_single__table
+			flex-wrap: nowrap
+			.especie_indicadores, .especie_compra, .especie_venta
+				width: 100%
+				margin-bottom: 20px
+				min-height: 150px
+				h5
+					font-size: 13px
+					padding: 5px
+					text-align: center
+				.item_label
+					// padding: 2px
+					width: 100%
+					font-size: 12px
+					margin-bottom: 5px
+					flex-wrap: wrap
+					input
+						display: block
+						width: 100%
+						height: 25px
+					span
+						text-align: center
+						padding: 2px
+						width: 100%
+						text-transform: uppercase
+						font-weight: 900
+				.especie_indicadores_container, .especie_compra_drop, .especie_venta_drop
+					// min-height: 150px
+					padding: 5px
+			// .especie_venta
+				// margin-bottom: 0
+		// 	.especie_indicadores, .especie_compra, .especie_venta
+		// 		width: 100%
+		// 		margin-bottom: 20px
+		// 		.especie_indicadores_container, .especie_compra_drop, .especie_venta_drop
+		// 			min-height: 150px
+		// 	.especie_venta
+		// 		margin-bottom: 0
+
+		// .especie_single__simulador
+		// 	.especie_single_simulador__table
+		// 		.table_item
+		// 			width: 100%
+		// 			margin-left: 0
+		// 			margin-right: 0
+
+
+
+.hidden
+	display: none
+
+
+.modal
+	.modal-header, .modal-footer
+		border: 0
+	.modal-header
+		padding: 30px 30px 0 30px
+	.modal-footer
+		padding: 0 30px 30px 30px
+	.modal-title
+		font-weight: 700
+		color: $c-blue
+		text-transform: uppercase
+	.modal-body
+		padding: 30px
+
+	.modal-content
+		// border: 2px solid #ddd
+		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1)
+	@media(max-width: 576px)
+		.modal-body
+			padding: 20px
+	.modal-header
+		padding: 20px 20px 0 20px
+	.modal-footer
+		padding: 0 20px 20px 20px
+
+
+
+
+#NotifModal
+	.text-muted
+		font-weight: 600
+	table
+		width: 100%
+		border-collapse: separate
+		border: 1px solid #f1f1f1
+		td
+			// border-top: 0
+			padding: 15px
+			// border-bottom: 1px solid #ddd
+			border: 0.5px solid #f1f1f1
+			// border: 2px solid #f1f1f1
+			&:last-child
+				vertical-align: middle
+				.Comprar, .Vender, .Esperar
+					font-weight: 600
+					text-transform: uppercase
+					&:before
+						content: ''
+						border-radius: 8px
+						width: 8px
+						height: 8px
+						margin-right: 5px
+						display: inline-block
+				.Comprar
+					color: $c-green
+					&:before
+						background-color: $c-green
+				.Vender
+					color: $c-red
+					&:before
+						background-color: $c-red
+				.Esperar
+					color: $c-blue
+					&:before
+						background-color: $c-blue
+
+			&:first-child
+				display: flex
+				align-items: center
+				figure
+					margin: 0 10px 0 0
+				.content
+					display: flex
+					flex-direction: column
+					align-items: flex-start
+					justify-content: center
+		// tr
+			// &:last-child td
+				// border-bottom: 0
+				// padding: 10px 0 0 0
+		.name
+			font-weight: 800
+			display: block
+			line-height: 1
+	.modal-footer
+		text-align: right
+	.custom-button--border
+		width: auto
+		margin: 0
+		padding: 0 50px 
+
+	@media(max-width: 350px)
+		table
+			border: 0
+			tr
+				margin-bottom: 25px
+				display: inline-block
+				width: 100%
+				border: 1px solid #f1f1f1
+				&:last-child
+					margin-bottom: 0
+				td
+					position: relative
+					padding: 35px 15px 15px 15px
+					&:before
+						position: absolute
+						top: 5px
+						left: 10px
+						color: #717180
+						width: auto
+						margin-right: 15px
+					&:first-child
+						img
+							width: 20px
+
+
+/* Contraseña Panel */
+.panel_main__pass
+	.btn-container
+		.custom-button
+			width: auto
+			padding: 0 50px 
+
+@import "ie.sass"

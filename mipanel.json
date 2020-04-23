@@ -1,0 +1,54 @@
+{
+  "element": {
+    "item": [
+      {
+        "name": {
+          "-id": "001",
+          "#text": "Ticker1",
+          "#pcompra": "12",
+          "#pventa": "13",
+          "#stoploss": "14",
+          "#ganancia": "15",
+          "#tendencia": "Subida",
+          "#estado": "Esperar"
+        }
+      },
+      {
+        "name": {
+          "-id": "002",
+          "#text": "Ticker2",
+          "#pcompra": "12",
+          "#pventa": "13",
+          "#stoploss": "14",
+          "#ganancia": "15",
+          "#tendencia": "Subida",
+          "#estado": "Comprar"
+        }
+      },
+      {
+        "name": {
+          "-id": "003",
+          "#text": "Ticker3",
+          "#pcompra": "12",
+          "#pventa": "13",
+          "#stoploss": "14",
+          "#ganancia": "15",
+          "#tendencia": "Mantener",
+          "#estado": "Vender"
+        }
+      },
+      {
+        "name": {
+          "-id": "012",
+          "#text": "Ticker12",
+          "#pcompra": "12",
+          "#pventa": "13",
+          "#stoploss": "14",
+          "#ganancia": "15",
+          "#tendencia": "Bajada",
+          "#estado": "Esperar"
+        }
+      }
+    ]
+  }
+}

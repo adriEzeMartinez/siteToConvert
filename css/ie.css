@@ -1,0 +1,30 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #panel-page .panel_main table.custom-table .btn-ajustes, #panel-page .panel_main table.custom-table .btn-borrar {
+    height: 0;
+  }
+  #panel-page .panel_aside .panel_aside__menu a {
+    height: 0;
+  }
+  #panel-page .panel_aside .panel_aside__separator {
+    height: 0;
+  }
+
+  #NotifModal .custom-button--border {
+    height: 0;
+  }
+
+  .custom-button--border {
+    height: 0;
+  }
+
+  .especie_single .especie_single__table .especie_indicadores .item_label, .especie_single .especie_single__table .especie_compra .item_label, .especie_single .especie_single__table .especie_venta .item_label {
+    height: 34px;
+  }
+  .especie_single .especie_single__table .especie_indicadores .especie_compra_drop, .especie_single .especie_single__table .especie_indicadores .especie_venta_drop, .especie_single .especie_single__table .especie_indicadores .especie_indicadores_container, .especie_single .especie_single__table .especie_compra .especie_compra_drop, .especie_single .especie_single__table .especie_compra .especie_venta_drop, .especie_single .especie_single__table .especie_compra .especie_indicadores_container, .especie_single .especie_single__table .especie_venta .especie_compra_drop, .especie_single .especie_single__table .especie_venta .especie_venta_drop, .especie_single .especie_single__table .especie_venta .especie_indicadores_container {
+    min-height: 250px;
+  }
+
+  #login-page {
+    height: 0;
+  }
+}
